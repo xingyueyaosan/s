@@ -1,0 +1,32 @@
+{
+    "name": "速阅阁-星月",
+    "url": "www.suyueg.com",
+    "version": 100,
+    "search": {
+        "url": "https://m.suyueg.com/book/search.html?q=${key}",
+        "charset": "gbk",
+        "list": ".searchcon > ul",
+        "name": "h3",
+        "author": "li + li",
+        "cover":  "https://img.suyueg.com/${h3>a@match->(\\d{3})[0]}/${h3>a@match->(\\d+)}s.jpg@replace->,->/",
+        "detail": "h3 > a"
+    },
+    "detail": {
+        "cover": "img",
+        "summary": "meta[name=description]@attr->content",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "catalog": "#metaurl@attr->content@replace->m.->www.@replace->book->0"
+    },
+    "catalog": {
+        "list": "li.chapter",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#articlecontent",
+        "purify": [
+            "还在(.+)\n(.+)百度(.+)\n(.+)速阅阁\\)"
+        ]
+    }
+}

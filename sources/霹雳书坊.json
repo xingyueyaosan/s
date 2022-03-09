@@ -1,0 +1,30 @@
+{
+    "name": "霹雳书坊-星月",
+    "url": "pilibook.com",
+    "version": 100,
+    "search": {
+        "url": "https://www.pilibook.com/s.php@post->s=${key}&type=articlename",
+        "charset": "gbk",
+        "list": ".searchresult > p",
+        "name": "a",
+        "author": ".author",
+        "detail": "a"
+    },
+    "detail": {
+        "cover": ".pic > img",
+        "summary": ".intro > p",
+        "category": ".infotype > p:eq(1)",
+        "update": ".infotype > p:eq(2)",
+        "status": ".infotype > p:eq(3)",
+        "catalog": "a:contains(章节目录)"
+    },
+    "catalog": {
+        "list": ".chapters > li",
+        "name": "a",
+        "chapter": "a",
+        "page": "a:matches(下一页)"
+    },
+    "chapter": {
+        "content": "#novelcontent > p"
+    }
+}

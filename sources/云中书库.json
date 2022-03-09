@@ -1,0 +1,27 @@
+{
+    "name": "云中书库-星月",
+    "url": "www.yunxs.com",
+    "version": 100,
+    "search": {
+        "url": "http://www.yunxs.com/plus/search.php?q=${key}",
+        "list": ".ul_b_list > li",
+        "name": "h2 > a",
+        "author": "p.state@match->(?<=作者：)(.+)(?=类型：)",
+        "cover": ".pic > a > img",
+        "detail": "h2 > a"
+    },
+    "detail": {
+        "summary": "div.words > p:nth-child(3)",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content"
+    },
+    "catalog": {
+        "list": ".list_box > ul > li",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": ".box_box",
+        "filter": ["@div"]
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "和图书-星月",
+    "url": "hetushu.com",
+    "version": 100,
+    "search": {
+        "url": "https://www.hetushu.com/book/search.php?keyword=${key}",
+        "charset": "utf-8",
+        "list": ".list > dd",
+        "name": "dd > h4 > a",
+        "author": "dd > h4 > span@match->(?<=/ )(.+)(?= /)",
+        "cover": "dd > a > img",
+        "detail": "dd > a"
+    },
+    "detail": {
+        "summary": ".intro",
+        "catalog": ""
+    },
+    "catalog": {
+        "list": "#dir",
+        "booklet": {
+            "name": "dt",
+            "list": "dd"
+        },
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#content",
+        "filter": [
+            "@h2"
+        ]
+    }
+}
