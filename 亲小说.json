@@ -1,0 +1,81 @@
+{
+    "name": "亲小说-星",
+    "url": "qinxiaoshuo.com",
+    "version": 100,
+    "search": {
+        "url": "http://qinxiaoshuo.com/api/book/search/${key}/1",
+        "charset": "UTF-8",
+        "list": "$.Books[*]",
+        "name": "$.Book_name",
+        "author": "$.Author_name",
+        "cover": "http://static.qinxiaoshuo.com:4000/bookimg/${$.Book_id}.jpg",
+        "detail": "http://qinxiaoshuo.com/api/book/get/${$.Book_name}"
+    },
+    "detail": {
+        "summary": "${$.Book.Tags}\n${$.Book.Book_intro}",
+        "status": "$.Book.Status",
+        "update": "$.Book.Last_update_time",
+        "lastChapter": "$.Book.Last_update_chapter_name",
+        "catalog": "http://qinxiaoshuo.com/api/user/book/get/${$.Book.Book_id}@post->http://qinxiaoshuo.com/api/user/book/get/${$.Book.Book_id}@header->Authorization:5e0f300f6d4c1128dde3737c:1:1603935794:3c793c060d9306a28021563c6ff0590d"
+    },
+    "catalog": {
+        "list": "$.Volumes[*]",
+        "orderBy": 0,
+        "booklet": {
+            "name": "$.Volume_name",
+            "list": "$.Chapters[*]"
+        },
+        "name": "$.Chapter_name",
+        "chapter": "http://qinxiaoshuo.com/api/book/chapter/get/${$.Volumes[0].Book_id}/${$.Chapter_id}"
+    },
+    "chapter": {
+        "content": "$.Chapter.Chapter_content"
+    },
+    "rank": [
+        {
+            "title": "日轻小说",
+            "url": "http://www.qinxiaoshuo.com/books/日轻/default/${page}.html?tag=${key}",
+            "page": 1,
+            "size": 10,
+            "categories": [
+                {"value": "全部", "key": ""},
+                {"value": "异世", "key": "异世界"},
+                {"value": "后宫", "key": "后宫"},
+                {"value": "搞笑", "key": "搞笑"},
+                {"value": "恋爱", "key": "恋爱"},
+                {"value": "校园", "key": "校园"},
+                {"value": "侦探", "key": "侦探"},
+                {"value": "历史", "key": "历史"},
+                {"value": "励志", "key": "励志"}
+            ],
+            "list": ".book",
+            "name": "h3 > a",
+            "author": ".more:nth-child(2)@match->(?<=作者: )(.+)",
+            "cover": "a > img",
+            "detail": "http://qinxiaoshuo.com/api/book/get/${a > img@attr->alt}"
+        },
+        {
+            "title": "小说书单",
+            "url": "http://www.qinxiaoshuo.com/${key}/${page}.html",
+            "page": 1,
+            "size": 10,
+            "categories": [
+                {
+                    "key": "books/原创/default",
+                    "value": "原创小说"
+                },{
+                    "key": "books/同人/default",
+                    "value": "同人小说"
+                },{
+                    "key": "book_lists/latest",
+                    "value": "轻小说书单"
+                }
+            ],
+            "list": ".book",
+            "name": "h3 > a",
+            "author": ".more:nth-child(2)@match->(?<=作者: )(.+)",
+            "cover": "a > img",
+            "detail": "http://qinxiaoshuo.com/api/book/get/${a > img@attr->alt}"
+        }
+    ]
+}
