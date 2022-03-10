@@ -12,7 +12,7 @@
         "detail": "http://qinxiaoshuo.com/api/book/get/${$.Book_name}"
     },
     "detail": {
-        "summary": "$.Book.Book_intro",
+        "summary": "${$.Book.Tags}\n${$.Book.Book_intro}",
         "status": "$.Book.Status",
         "update": "$.Book.Last_update_time",
         "lastChapter": "$.Book.Last_update_chapter_name",

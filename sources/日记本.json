@@ -12,8 +12,8 @@
         "detail": "https://novel.riji8.com/book/${$._id}"
     },
     "detail": {
-        "summary": "分类：${$.cat}\n${$.majorCate}\n标签：${$.tags}\n字数：${$.wordCount}\n${$.longIntro}",
-        "status": "$.complete@equal->0@replace->0->连载",
+        "summary": "分类：${$.majorCate} ${$.cat}\n标签：\n${$.tags}\n${$.longIntro}\n字数：${$.wordCount}",
+        "status": "$.complete@equal->0@replace->0->连载,$.complete@equal->1@replace->1->完结",
         "update": "$.updated",
         "catalog": "https://novel.riji8.com/mix-atoc/${$._id}?view=chapters"
     },

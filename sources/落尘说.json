@@ -8,7 +8,7 @@
         "list": ".cover > p.line",
         "name": "a + a",
         "author": "a:nth-child(3)",
-        "cover": "https://www.luocs.cn/files/article/image/${parseInt(${a+a}@match->(\\d+)[0]/1000)}/${a+a@match->(\\d+)}/${a+a@match->(\\d+)}s.jpg`,
+        "cover": "https://www.luocs.cn/files/article/image/${parseInt(${a+a@match->(\d+)[0]/1000)}}/${a+a@match->(\d+)}/${a+a@match->(\d+)}s.jpg`,
         "detail": "a.blue"
     },
     "detail": {

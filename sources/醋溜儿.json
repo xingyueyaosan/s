@@ -6,7 +6,7 @@
         "url": "https://m.clewxc.com/search/keyword/${key}",
         "list": ".partlist-info>dl",
         "name": "dt@match->(?<=《).+(?=》)",
-        "author": ".info>p:nth-child(1)@replace->：->",
+        "author": ".info>p>span",
         "cover": "img",
         "detail": "a"
     },

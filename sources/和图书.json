@@ -12,7 +12,7 @@
         "detail": "dd > a"
     },
     "detail": {
-        "summary": "${div:matches(类型)}\n${div:matches(字数)}\n${.intro}",
+        "summary": "${.book_info>div:matches(型：)}\n${.book_info>div:matches(数：)}\n${.intro}",
         "catalog": ""
     },
     "catalog": {

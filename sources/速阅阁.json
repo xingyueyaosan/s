@@ -7,7 +7,7 @@
         "charset": "gbk",
         "list": ".searchcon > ul",
         "name": "h3",
-        "author": "li + li@split->(：)[1]",
+        "author": "li + li@match->(?<=：)(.+)",
         "cover":  "https://img.suyueg.com/${parseInt(${h3>a@match->(\\d+)[0]/1000)}/${h3>a@match->(\\d+)}/${h3>a@match->(\\d+)}s.jpg",
         "detail": "h3 > a"
     },
@@ -16,7 +16,7 @@
         "summary": "标签：${p:matches(分类)>a}\n${meta[name=og:description]@attr->content}",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
-        "catalog": "meta[id=metaurl]@attr->content@replace->m.->www.@replace->book->0"
+        "catalog": "url@replace->m.->www.@replace->book->0"
     },
     "catalog": {
         "list": "li.chapter",
