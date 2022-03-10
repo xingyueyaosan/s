@@ -1,7 +1,7 @@
 {
-    "name": "和图书-星月",
+    "name": "和图书-星",
     "url": "hetushu.com",
-    "version": 101,
+    "version": 100,
     "search": {
         "url": "https://www.hetushu.com/book/search.php?keyword=${key}",
         "charset": "utf-8",

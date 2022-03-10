@@ -1,6 +1,6 @@
 {
-    "name": "书本网-星月",
-    "url": "www.bookben.net",
+    "name": "书本网-星",
+    "url": "bookben.net",
     "version": 100,
     "search": {
         "url": "https://www.bookben.net/search/?searchkey=${key}",
@@ -12,6 +12,7 @@
         "detail": "a"
     },
     "detail": {
+        "summary": "${p.sort}\n${#intro}",
         "status": "#info@match->(?<=状态：).+(?=更)",
         "update": "#info@match->(?<=更新：).+(?=人)"
     },

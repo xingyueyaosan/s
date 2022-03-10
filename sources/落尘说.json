@@ -1,19 +1,20 @@
 {
-    "name": "落尘说-星月",
-    "url": "www.luocs.cn",
+    "name": "落尘说-星",
+    "url": "luocs.cn",
     "version": 100,
     "search": {
         "url": "https://m.xluochen.com/s.php@post->type=articlename&s=${key}",
 		"charset": "gbk",
-        "list": ".cover > .line",
-        "name": "a:nth-child(2)",
+        "list": ".cover > p.line",
+        "name": "a + a",
         "author": "a:nth-child(3)",
-        "detail": "a:nth-child(2)"
+        "cover": "https://www.luocs.cn/files/article/image/${parseInt(${a+a}@match->(\\d+)[0]/1000)}/${a+a@match->(\\d+)}/${a+a@match->(\\d+)}s.jpg`,
+        "detail": "a.blue"
     },
     "detail": {
         "cover": ".block_img2 > img",
-        "summary": ".intro_info",
-        "category": "p:nth-child(5)@replace->分类：->",
+        "summary": "${p:nth-child(5)@replace->分类：->}\n${.intro_info}",
+        "category": "",
         "status": "p:nth-child(6)@replace->状态：->",
         "update": "p:nth-child(7)@replace->更新：->",
         "catalog": "a:matches(完整目录)@attr->href@replace->m.xluochen.com->www.luocs.cn"

@@ -1,0 +1,28 @@
+{
+    "name": "新世纪-星",
+    "url": "www.2100xs.com",
+    "version": 100,
+    "search": {
+        "url": "https://www.2100xs.com/s.php?ie=gbk&q=${key}",
+        "charset": "utf-8",
+        "list": ".bookbox",
+        "name": "h4 > a",
+        "author": ".author@match->(?<=作者：).+",
+        "cover": ".bookimg > a > img",
+        "detail": "h4 > a"
+    },
+    "detail": {
+        "summary": "meta[property=og:description]@attr->content",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content"
+    },
+    "catalog": {
+        "list": ".listmain > dl > dd:gt(6)",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#content",
+        "purify": ["(天才一秒记住).+?(m.2100xs.com)", "br    />","((https|http)?:\/\/).+html"]
+    }
+}

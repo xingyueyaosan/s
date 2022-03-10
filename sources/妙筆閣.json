@@ -1,5 +1,5 @@
 {
-    "name": "妙筆閣-星月",
+    "name": "妙筆閣-星",
     "url": "imiaobige.com",
     "version": 100,
     "search": {
@@ -29,7 +29,7 @@
     "chapter": {
         "content": "#content",
         "purify": [
-            ".+度.+节！",
+            ".+度(.+)节！",
             "妙笔阁(.+)\\n"
         ]
     }
