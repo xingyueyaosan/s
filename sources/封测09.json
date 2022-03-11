@@ -7,9 +7,9 @@
         "charset": "gbk",
         "list": ".searchcon > ul",
         "name": "h3",
-        "author": "h3>a@attr->href@match->(\d+)",
+        "author": "h3>a@attr->href@match->(\\d+)",
         "cover":  "https://img.suyueg.com/${h3>a@attr->href}@match->(\\d{3})/${h3>a@attr->href@match->(\\d+)}/${h3>a@attr->href@match->(\\d+)}s.jpg",
-        "detail": "https://www.suyueg.com${h3>a@attr->href@replace->book->0\}"
+        "detail": "https://www.suyueg.com${h3>a@attr->href@replace->book->0\\}"
     },
     "detail": {
         "cover": "",
