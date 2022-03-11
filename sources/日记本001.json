@@ -1,0 +1,28 @@
+{
+    "name": "日记本-星001",
+    "url": "novel.riji8.com001",
+    "version": 100,
+    "search": {
+        "url": "https://novel.riji8.com/book/search?query=${key}",
+        "charset": "UTF-8",
+        "list": "$..books[*]",
+        "name": "$.title",
+        "author": "$.author",
+        "cover": "$.cover",
+        "detail": "https://novel.riji8.com/book/${$._id}"
+    },
+    "detail": {
+        "summary": "分类：${$.majorCate} ${$.cat}\n标签：\n${$.tags}\n${$.longIntro}\n字数：${$.wordCount}\n状态：${$.complete}@equal->0@replace->false->完结",
+        "status": "$.complete@equal->1@replace->false->连载",
+        "update": "$.updated",
+        "catalog": "https://novel.riji8.com/mix-atoc/${$._id}?view=chapters"
+    },
+    "catalog": {
+        "list": "$..chapters[*]",
+        "name": "$.title",
+        "chapter": "$.link"
+    },
+    "chapter": {
+        "content": "$.chapter.body"
+    }
+}
