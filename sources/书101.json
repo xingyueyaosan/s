@@ -1,0 +1,29 @@
+{
+    "name": "书本网-星",
+    "url": "bookben.net",
+    "version": 100,
+    "search": {
+        "url": "https://www.bookben.net/search/?searchkey=${key}",
+        "charset": "utf-8",
+        "list": ".item",
+        "name": "dt > a",
+        "author": ".btm > a",
+        "cover": "a > img",
+        "detail": "a"
+    },
+    "detail": {
+        "summary": "${p.sort@match->(?<=： ).*}\n${#intro}",
+        "status": "#info@match->(?<=状态：).+(?=更)",
+        "update": "#info@match->(?<=更新：).+(?=人)"
+    },
+    "catalog": {
+        "list": "dl > a",
+        "name": "dd",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#booktxt",
+        "page": "a#next_url",
+        "purify": [""]
+    }
+}
