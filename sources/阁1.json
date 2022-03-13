@@ -1,0 +1,32 @@
+{
+    "name": "速阅阁-星",
+    "url": "suyueg.com",
+    "version": 100,
+    "search": {
+        "url": "https://m.suyueg.com/book/search.html?q=${key}",
+        "charset": "gbk",
+        "list": ".searchcon > ul",
+        "name": "h3",
+        "author": "li + li@match->(?<=：)(.+)",
+        "cover":  "https://img.suyueg.com/${h3>a}xyys/${h3>a}${h3>a}/books.jpg@replace->(\\d{3})/xyys->//book@replace->//book->",
+        "detail": "https://www.suyueg.com/${h3 > a}@replace->book->0"
+    },
+    "detail": {
+        "cover": "img",
+        "summary": "${span:matches(类别)>a}\n${p.jj}",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "catalog": ""
+    },
+    "catalog": {
+        "list": "li.chapter",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#articlecontent",
+        "purify": [
+            "还在(.+)\n(.+)百度(.+)\n(.+)速阅阁\\)"
+        ]
+    }
+}
