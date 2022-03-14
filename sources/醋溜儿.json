@@ -1,28 +1,31 @@
 {
     "name": "醋溜儿-星",
-    "url": "m.clewxc.com",
+    "url": "clewxc.com",
     "version": 100,
     "search": {
-        "url": "https://m.clewxc.com/search/keyword/${key}",
-        "list": ".partlist-info>dl",
-        "name": "dt@match->(?<=《).+(?=》)",
-        "author": ".info>p>span",
+        "url": "https://www.clewxc.com/Home/Search/index.html?keyword=${key}",
+        "list": ".book_data",
+        "name": "h1",
+        "author": "span",
         "cover": "img",
         "detail": "a"
     },
     "detail": {
-        "summary": "[property=og:description]@attr->content",
-        "status": "[property=og:novel:status]@attr->content",
-        "update": "[property=og:novel:update_time]@attr->content",
-        "catalog": ".bfirst"
+        "summary": "${meta[property=og:novel:category]}\n${meta[property=og:description]}@attr->content",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content"
     },
     "catalog": {
-        "list": "li",
-        "page": ".location>div>a:nth-last-child(2)",
-        "name": "span",
+        "list": ".con > dl",
+        "booklet": {
+            "name": "dt",
+            "list": "dd"
+        },
+        "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": ".content"
+        "content": ".content",
+        "purify": [""]
     }
 }

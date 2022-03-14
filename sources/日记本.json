@@ -13,7 +13,7 @@
     },
     "detail": {
         "summary": "分类：${$.majorCate} ${$.cat}\n标签：\n${$.tags}\n${$.longIntro}\n字数：${$.wordCount}",
-        "status": "$.complete@equal->0@replace->0->连载,$.complete@equal->1@replace->1->完结",
+        "status": "$.complete@equal->1@replace->false->连载",
         "update": "$.updated",
         "catalog": "https://novel.riji8.com/mix-atoc/${$._id}?view=chapters"
     },

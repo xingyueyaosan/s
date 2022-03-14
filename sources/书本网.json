@@ -24,6 +24,8 @@
     "chapter": {
         "content": "#booktxt",
         "page": "a#next_url",
-        "purify": ["hf;",".+醋,溜,儿"]
+        "purify": [
+            ""
+        ]
     }
 }

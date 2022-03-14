@@ -12,8 +12,7 @@
         "detail": "dd > a"
     },
     "detail": {
-        "summary": "${.book_info>div:matches(型：)}\n${.book_info>div:matches(数：)}\n${.intro}",
-        "catalog": ""
+        "summary": "${.book_info>div:contains(类型)}    ${.book_info>div:contains(字数)}\n${.intro}"
     },
     "catalog": {
         "list": "#dir",

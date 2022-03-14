@@ -1,0 +1,29 @@
+{
+    "name": "笔趣阁x-星",
+    "url": "m.biqugx.com",
+    "version": 100,
+    "search": {
+        "url": "https://m.biuqge.com/modules/article/search.php?searchtype=all&searchkey=${key}&t_btnsearch=",
+        "charset": "utf-8",
+        "list": ".c_row",
+        "name": "h4",
+        "author": "p.gray@match->(.+)(?= |)",
+        "cover": "img",
+        "detail": "a"
+    },
+    "detail": {
+        "summary": "${h4>span}  ${p>span}\n${#introa:not(a)}",
+        "catalog": "a:matches(目录)"
+    },
+    "catalog": {
+        "list": ".index > dd",
+        "name": "a",
+        "chapter": "a",
+        "page": "a:matches(下一页)"
+    },
+    "chapter": {
+        "content": ".acontent",
+        "purify": [""],
+        "page": "a:matches(下一页)"
+    }
+}

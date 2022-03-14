@@ -1,0 +1,32 @@
+{
+    "name": "红甘泉-星",
+    "url": "m.hgq26.com",
+    "version": 100,
+    "search": {
+        "url": "https://m.hgq26.com/modules/article/waps.php@post->searchkey=${key}",
+		"charset": "gbk",
+        "list": ".cover > p.line",
+        "name": "a + a",
+        "author": "a:nth-child(3)",
+        "detail": "a.blue"
+    },
+    "detail": {
+        "cover": ".block_img2 > img",
+        "summary": "${p:eq(4)>a}\n${.intro_info}",
+        "status": "p:eq(5)@replace->状态：->",
+        "update": "p:eq(6)@replace->更新：->",
+        "catalog": "a:contains(目录)"
+    },
+    "catalog": {
+        "list": ".chapter > li",
+        "page": "a:contains(下一页)",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#nr1",
+        "purify": [
+            "你是天才，一秒记住.*"
+        ]
+    }
+}

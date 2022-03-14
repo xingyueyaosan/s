@@ -8,18 +8,17 @@
         "list": ".searchcon > ul",
         "name": "h3",
         "author": "li + li@match->(?<=：)(.+)",
-        "cover":  "https://img.suyueg.com/${parseInt(${h3>a@match->(\\d+)[0]/1000)}/${h3>a@match->(\\d+)}/${h3>a@match->(\\d+)}s.jpg",
-        "detail": "h3 > a"
+        "detail": "https://www.suyueg.com${h3>a}@replace->book->0"
     },
     "detail": {
-        "cover": "img",
-        "summary": "标签：${p:matches(分类)>a}\n${meta[name=og:description]@attr->content}",
+        "cover": ".pic > img",
+        "summary": "${span:matches(类别)>a}\n${p.jj}",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
-        "catalog": "url@replace->m.->www.@replace->book->0"
+        "catalog": ""
     },
     "catalog": {
-        "list": "li.chapter",
+        "list": ".chapter",
         "name": "a",
         "chapter": "a"
     },
