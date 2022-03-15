@@ -1,6 +1,6 @@
 ### 厚墨书源
 ```
-https://cdn.jsdelivr.net/gh/xingyueyaosan/source/14.json
+https://cdn.jsdelivr.net/gh/xingyueyaosan/source/10.json
 ```
 
 
