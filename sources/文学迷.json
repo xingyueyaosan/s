@@ -1,18 +1,18 @@
 {
-    "name": "思路客-星",
-    "url": "siluke.tw",
+    "name": "文学迷-星",
+    "url": "wenxuemi.com",
     "version": 100,
     "search": {
-        "url": "https://www.silukew.com/search.php?q=${key}",
+        "url": "https://www.wenxuemi.com/search.php?q=${key}",
         "charset": "utf-8",
         "list": ".result-item.result-game-item",
-        "name": "h3",
-        "author": "p > span:nth-child(2)",
-        "cover": "img",
-        "detail": "a"
+        "name": "h3 > a",
+        "author": "p > span + span",
+        "cover": "a > img",
+        "detail": "h3 > a"
     },
     "detail": {
-        "summary": "meta[property=og:description]@attr->content",
+        "summary": "${.con_top}\n${#intro}",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content"
     },
