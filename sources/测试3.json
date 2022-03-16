@@ -1,0 +1,36 @@
+{
+    "name": "和图书-星",
+    "url": "hetushu.com",
+    "remarks": "正文内容顺序是错乱的呦",
+    "version": 100,
+    "search": {
+        "url": "https://www.hetushu.com/book/search.php?keyword=${key}",
+        "charset": "utf-8",
+        "list": ".list > dd",
+        "name": "h4 > a",
+        "author": "span@match->(?<=/ ).+(?= /)",
+        "cover": "img",
+        "detail": "a"
+    },
+    "detail": {
+        "summary": "${a:contains(和图书)+a+a}    ${.book_info>div:contains(字数)}\n${.intro}@replace->字数：->"
+    },
+    "catalog": {
+        "list": "#dir",
+        "booklet": {
+            "name": "dt",
+            "list": "dd"
+        },
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#content",
+        "filter": [
+            "@h2",
+            "@acronym", "@big", "@code", "@cite", "@kbd", "@strike", "@tt", "@var",
+            "@bdo", "@dfn", "@samp",
+            "@q", "@s", "@u"
+        ]
+    }
+}
