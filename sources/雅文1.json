@@ -1,0 +1,29 @@
+{
+    "name": "雅文1",
+    "url": "yawenba.net",
+    "version": 100,
+    "search": {
+        "url": "https://www.yawenba.net/search.php@post->keyword=${key}",
+		"charset": "gbk",
+        "list": "ul > li",
+        "name": ".s2 > a",
+        "author": ".s4",
+        "detail": ".s2 > a@replace->www->m"
+    },
+    "detail": {
+        "cover": "meta[property=og:image]@attr->content",
+        "summary": "#intro",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "catalog": "a:contains(点击查看更多)"
+    },
+    "catalog": {
+        "list": "ul.chapter > li",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#nr1",
+        "filter": ["@a", "@p:contains(章 )"]
+    }
+}

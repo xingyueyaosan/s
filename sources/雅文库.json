@@ -1,0 +1,28 @@
+{
+    "name": "雅文库",
+    "url": "yawenku.com",
+    "version": 100,
+    "search": {
+        "url": "http://www.yawenku.com/search.php@post->keyword=${key}",
+		"charset": "gbk",
+        "list": "ul > li",
+        "name": ".s2 > a",
+        "author": ".s4",
+        "detail": ".s2 > a"
+    },
+    "detail": {
+        "cover": "meta[property=og:image]@attr->content",
+        "summary": "#intro",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content"
+    },
+    "catalog": {
+        "list": "#list > dl > dd:gt(15)",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#content",
+        "filter": ["@a", "【】"]
+    }
+}
