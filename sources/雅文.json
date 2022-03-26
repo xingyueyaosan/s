@@ -1,0 +1,33 @@
+{
+    "name": "雅文10",
+    "url": "www.yawenba.net",
+    "version": 100,
+    "search": {
+        "url": "https://m.yawenba.net/search.php@post->keyword=${key}",
+		"charset": "gbk",
+        "list": ".bookbox",
+        "name": ".bookname@replace->[.*]->",
+        "author": ".author@replace->作者：->",
+        "cover": ".bookimg > img",
+        "detail": ".bookimg > a"
+    },
+    "detail": {
+        "summary": "#intro",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "catalog": "a:contains(点击查看更多)"
+    },
+    "catalog": {
+        "list": ".chapter",
+        "booklet": {
+            "name": "@replace->->正文",
+            "list": "li"
+        },
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#nr1",
+        "filter": ["@a", "@p:contains(章 )"]
+    }
+}
