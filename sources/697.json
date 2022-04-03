@@ -1,0 +1,31 @@
+{
+    "name": "69书吧3",
+    "url": "69shu.net3",
+    "version": 100,
+    "search": {
+        "url": "https://69shu.net/s.php@post->s=${key}&type=articlename",
+        "charset": "gbk",
+        "list": "p.search_list",
+        "name": "a",
+        "author": "p@match->(?<=- ).+",
+        "cover": "https://img.69shu.net${a}xyys${a}/xing${a}xing/s.jpg@replace->(\\d{3})/xyys->xyys@replace->/xyys/->/0/@replace->xyys->@replace->/xing/->",
+        "detail": "https://img.69shu.net${a}xyys${a}${a}s.jpg@replace->(\\d{3})\/xyys->"
+    },
+    "detail": {
+        "cover": ".tu > img",
+        "summary": "#izone",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "catalog": ""
+    },
+    "catalog": {
+        "list": "ul ~ ul > li",
+        "orderBy": 0,
+        "page": "select>option[selected]+option@attr->value",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#novelcontent"
+    }
+}
